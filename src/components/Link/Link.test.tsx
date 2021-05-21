@@ -1,8 +1,10 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import Link from ".";
 
-test("link renders correctly", () => {
-  const { debug } = render(<Link />);
+describe("Link Component", () => {
+  it("link renders correctly", () => {
+    render(<Link />);
 
-  debug();
+    expect(screen.getByText("Home")).toBeInTheDocument();
+  });
 });
